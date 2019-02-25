@@ -1,0 +1,9 @@
+#!/bin/sh
+
+rm -rf solution
+mkdir solution
+
+cp -a Makefile sort.c pack.c pack.h pqueue.h huffman.c pqueue.c solution
+
+tar cvf solution.tar ./solution
+rm -rf solution

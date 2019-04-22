@@ -13,4 +13,4 @@ Instructed by Prof. Moe Amouzgar, COEN 20 is an introductory course to ARM assem
 Instructed by Prof. Behnam Dezfouli, COEN 79 is a course teaching object-oriented programming in C++.
 
 ### COEN 146
-TBA
+Instructed by Prof. Salem Al-Agtash, COEN 146 is a course on the fundamentals of computer networking. The classes covers theoretical topics on packet transmission is done. The labs pertain to rudimentary network programming in C.

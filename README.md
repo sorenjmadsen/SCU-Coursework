@@ -14,3 +14,6 @@ Instructed by Prof. Behnam Dezfouli, COEN 79 is a course teaching object-oriente
 
 ### COEN 146
 Instructed by Prof. Salem Al-Agtash, COEN 146 is a course on the fundamentals of computer networking. The classes covers theoretical topics on packet transmission is done. The labs pertain to rudimentary network programming in C.
+
+### COEN 129
+Instructed by Prof. Benham Dezfouli as a special elective course, we covered current topics in IoT. Covering everything from models of IoT systems to the specifics of communication protocols, such as Bluetooth, 802.11, and LoRa, to access control, internet protocols (IPv4, IPv6, 6LoWPAN), and application protocols such as HTTP, MQTT, and CoAP.

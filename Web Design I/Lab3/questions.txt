@@ -1,0 +1,35 @@
+Task 1:
+A.  The overflow determines how the container handles content that exceeds
+    the boundaries. When set to hidden, the content will remain hidden. If
+    set to auto, then the content is hidden, but a scroll bar is included 
+    so the rest of it can be viewed.
+
+B.  The order property adjusts in which order that an element will appear 
+    in the page. When set to -1, it makes the item the last in the sequence.
+
+C.  In code.
+
+D.  The push function adds an action to the stack at the very first place,
+    pushing all other elements further back.
+
+E.  The pop function returns the element in the very first position, moving 
+    all other elements forward after removal.
+
+F.  The defer attribute means that Javascript code is not run until all of 
+    the webpage is loaded. If we didn't use defer, we could have to put the
+    two statements after the <body>.
+
+What is the difference between margin and padding?
+    Margin refers to the space around an element. Padding refers to the space between the border
+    of the element and the content of the element.
+
+What is the default value of the Flexbox property flex-flow?
+    The default value of flex-flow is "row nowrap".
+
+What value do variables have if they have been declared but have not been given any value?
+    undefined
+
+What is 'this' keyword in JavaScript?
+    The keyword 'this' is used when referencing an object inside of a defined class. For example,
+    in the Stack class, we would use 'this' to reference containerElement, and it would look like
+    this.containerElement.

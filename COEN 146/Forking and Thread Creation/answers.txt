@@ -1,2 +1,0 @@
-Step 3. A segmentation fault is returned due to missing delay.
-Step 4. When the delay is 500us, the parent process falls behind the child process due to the fork before the loop. When the delay is 5000us, the parent process alernates print messages with the child process.

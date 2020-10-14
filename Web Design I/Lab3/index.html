@@ -1,0 +1,67 @@
+<html> 
+    <head> 
+        <title> Undo Redo </title>
+        <!-- 
+            This metaset defines the set of characters that this document will be written 
+            with. This let's the browser render it properly.
+        -->
+        <meta charset="UTF-8"></meta>
+        <link href='https://meyerweb.com/eric/tools/css/reset/reset.css' rel='stylesheet'>
+        <link href='./index.css' rel='stylesheet'>
+        <!-- 
+            Javascript by default has a global scope. This means that any variables
+            or functions or classes not inside of a function or a block are available
+            to all scripts that come after. So Stack from stack.js is available from
+            index.js.
+
+            TASK 1F: What does the defer attribute do? Where would we have to put these 
+            two statements if we didn't have defer?
+        -->
+        <script defer src='stack.js'></script>
+        <script defer src='index.js'></script>
+    </head>
+    <body>
+        <main>
+            <!-- 
+                This ampersand looking thing renders an undo button. You can 
+                copy paste these "HTML Entities" and they'll appear as shown: 
+
+                https://dev.w3.org/html5/html-author/charref
+            -->
+            <section class='stacks'>
+                <section id='undo-stack' class='stack'>
+                    <button id='undo-button'>&#8630;</button>
+                </section>
+                <section id='redo-stack' class='stack'>
+                    <button id='redo-button'>&#8631;</button>
+                </section>
+            </section>
+            <!-- 
+                This component will act sort of like a grid. You should look at the index.css
+                file to see how Flexbox can be used to do this. But CSS grid is a much more
+                powerful browser primitive that can accomplish this. We just didn't go over it. 
+            -->
+            <section class='grid'>
+                <!-- 
+                    Notice that each of the buttons has a data-position, maybe you could use these
+                    to track which of the buttons need to have an action redone to them!
+                -->
+                <section class='row'>
+                    <button data-position=0>0</button>
+                    <button data-position=1>1</button>
+                    <button data-position=2>2</button>
+                </section>
+                <section class='row'>
+                    <button data-position=3>3</button>
+                    <button data-position=4>4</button>
+                    <button data-position=5>5</button>
+                </section>
+                <section class='row'>
+                    <button data-position=6>6</button>
+                    <button data-position=7>7</button>
+                    <button data-position=8>8</button>
+                </section>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+3. #fancy
+4. plate apple
+6. .small
+7. orange.small
+9. plate, bento
+12. plate + apple
+14. plate > apple
+15. plate orange:first-child
+18. plate:nth-child(3)
+27. [for]
+32. [for*='obb']
+
+Questions:
+1. Classes are a bit of a shock, but the workload is beginning to become routine. After working all
+summer it feels strange to have class at 5.40pm (when i'm usually not working anymore).
+2. I think you're a great professor, so far. It's intersting how you integrate certain technology into the coding assignments such as this one. It's cool to be using the web to learn about the web.

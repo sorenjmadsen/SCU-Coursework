@@ -1,0 +1,13 @@
+#!/bin/sh
+
+rm -rf project3
+mkdir project3
+
+mkdir project3/strings
+cp -a strings/{Makefile,unique.c,parity.c,set.h,report.txt} project3/strings
+
+mkdir project3/generic
+cp -a generic/{Makefile,unique.c,parity.c,counts.c,set.h} project3/generic
+
+tar cvf project3.tar ./project3
+rm -rf project3

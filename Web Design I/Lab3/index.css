@@ -1,0 +1,120 @@
+/**
+    Global-ish styles that'll help get some of the spacing correct. 
+*/
+
+main {
+    display: flex;
+    justify-content: space-between;
+
+    /** 
+        I want this to always be the only thing seen in a window
+        so this is a neat trick. 
+    */
+    width: 100vw;
+    height: 100vh;
+    /** 
+        TASK 1A: What does the overflow property do? What happens when
+        you set it to auto vs. hidden? 
+            The overflow determines how the container handles content that exceeds
+            the boundaries. When set to hidden, the content will remain hidden. If
+            set to auto, then the content is hidden, but a scroll bar is included 
+            so the rest of it can be viewed.
+    */
+    overflow: hidden;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    /** 
+        This is a transition frunction I really liked from 
+        https://codepen.io/sdthornton/pen/wBZdXq . I'm not too heavy into the math
+        of animation functions so this serves that purpose. 
+    */
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+button:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+main > section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 
+        Use 48% so that neither section overflows. We could also use flex-basis
+        but i thought width: 48% made this property more explicit since flex-basis
+        will use this anyways
+    */
+    width: 48%;
+    height: 100%;
+}
+
+.stack  {
+    display: flex;
+    flex-flow: column;
+
+    /* 
+        This width will be 30% of the parent section's width. I know that 60vh
+        or 60% of the viewport height will leave plenty of space on the top and
+        bottom. 
+    */
+    height: 60vh;
+    width: 30%;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.stack > button{
+    /** 
+        TASK 1B: What does the order property do for a flex-item?
+    */
+    order: -1;
+    
+    background-color: #eee;
+    
+    text-align: center;
+    font-size: 2rem;
+    
+    width: 100%;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;   
+}
+
+.grid .row button {
+    background-color: #eee;
+
+    width: 20vh;
+    height: 20vh;
+
+    margin: 1rem 0.5rem;
+}
+
+/** 
+    TASK 1C: Remove this comment after you've read it. 
+
+    You can use this (and modify it if you wish) to add to any
+    of the new elements you'll create for the stack.
+ */
+.stack-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ddd;
+
+    width: 100%;
+    height: 3vh;
+
+    font-size: 1rem;
+}

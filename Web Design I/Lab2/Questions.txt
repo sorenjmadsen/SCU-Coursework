@@ -1,0 +1,14 @@
+1. What HTML tag do you use for links?
+    <a>
+
+2. What is the CSS to define a container as a flexbox?
+    display: flex;
+
+3. What is the difference between the main axis and cross axis in a flexbox?
+    The main axis is the axis by which the flex-direction is defined. The main axis
+    is horizontal when "flex-direction: row;" and verical when "flex-direction: column;"
+
+4. How do you define a CSS selector for ids, classes, and elements? 
+    #id
+    .class
+    element

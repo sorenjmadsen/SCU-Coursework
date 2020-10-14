@@ -1,0 +1,9 @@
+1. What are the elements used to create a list in html?
+One can use either an ordered or unordered list by using tags <ol> and <ul>, respectively. Inside these tags, the list item must be used for each individual item <li>.
+2. Can you nest a paragraph tag inside a <li> tag?
+Yes, the paragraph tags hold text and can be used for styling.
+3. What is the correct HTML element for inserting a line break?
+<br/>
+4. What is the correct HTML for adding a text color?
+Assuming the text is held in a paragraph, then the code would be:
+<p style="color:blue">TEXT GOES HERE</p>

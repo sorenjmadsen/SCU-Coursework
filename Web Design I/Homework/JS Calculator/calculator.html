@@ -1,0 +1,42 @@
+<html>
+    <head> 
+        <link href='https://meyerweb.com/eric/tools/css/reset/reset.css' rel='stylesheet'>
+        <link href='./calculator.css' rel='stylesheet'>
+        <script defer src='./calculator.js'></script>
+    </head>
+    <body> 
+        <main>
+            <section id='calculator'>
+                <input id='output' type='number' disabled value="0"></input>
+                <div>
+                    <button id='clear' data-operation='clear'>C</button>
+                    <button id='negative' data-operation='negative'>&#177;</button>
+                    <button id='percent' data-operation="percent">&#37;</button>
+                    <button class='operator' data-operation='divide'>&#247;</button>
+                </div>
+                <div>
+                    <button value="7">7</button>
+                    <button value="8">8</button>
+                    <button value="9">9</button>
+                    <button class='operator' data-operation='multiply'>&#215;</button>
+                </div>
+                <div>
+                    <button value="4">4</button>
+                    <button value="5">5</button>
+                    <button value="6">6</button>
+                    <button class='operator' data-operation='subtract'>&#8722;</button>
+                </div>
+                <div>
+                    <button value="1">1</button>
+                    <button value="2">2</button>
+                    <button value="3">3</button>
+                    <button class='operator' data-operation='add'>&#43;</button>
+                </div>
+                <div> 
+                    <button id='zero-button' value="0">0</button>
+                    <button class='operator' data-operation='equals'>&#61;</button>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

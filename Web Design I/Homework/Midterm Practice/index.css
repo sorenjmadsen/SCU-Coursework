@@ -1,0 +1,142 @@
+/* body {
+	width: 100vw;
+	height: 100vh;
+
+	background: white;
+
+
+    font-family: monospace;
+    
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+ 
+main {
+	display: flex;
+    flex-direction: column;
+    
+	align-items: center;
+
+    padding: 32px 16px;
+    visibility: visible;
+}
+ 
+button {
+	height: 64px;
+	width: 64px;
+
+	color: #9b59b6;
+	background: transparent;
+
+	border: 2px line black;
+	padding: 16px;
+    
+	cursor: pointer;
+
+	font-size: 1.3rem;
+}
+button:hover{
+    background-color: #eee;
+}
+
+p.hidden {
+    visibility: hidden;
+} */
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100vw;
+	height: 100vh;
+
+	background: #333;
+
+	font-family: sans-serif;
+}
+ 
+main {
+	display: flex;
+	flex-direction: column;
+
+	padding: 32px 16px;
+
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	border-radius: 4px;
+ 
+	background-size: cover;
+	background-image: url("https://images.unsplash.com/photo-1603035578827-7f7a39d57f48");
+}
+ 
+button {
+	height: 64px;
+	width: 64px;
+
+	color: #9b59b6;
+	background-color: #eee;
+	border: none;
+	border-radius: 50%;
+
+	margin-left: 8px;
+	margin-right: 8px;
+    
+	cursor: pointer;
+
+	font-size: 1.3rem;
+}
+
+button:hover{
+    border: 1px solid #9b59b6;
+}
+
+button:active{
+    background-color: #9b69b6;
+    color: white;
+}
+
+ 
+#input-container {
+	display: flex;
+	justify-content: center;
+}
+ 
+input {
+	margin-bottom: 32px;
+	padding: 16px;
+    
+	background-color: #eee;
+	border: none;
+	border-radius: 4px;
+
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+input.success{
+    background-color:#93e6b6;
+    color: #2ecc71;
+}
+
+input.error{
+    background-color: #f2a097;
+    color: #e74c3c;
+}
+.numbers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.row{
+    display:flex;
+    flex-direction: row-reverse;
+}
+ 
+.row {
+    
+	margin-top: 8px;
+	margin-bottom: 8px;
+}

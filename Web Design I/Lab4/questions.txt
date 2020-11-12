@@ -1,0 +1,15 @@
+How do you center elements using flexbox?
+    You center elements on the main axis using 'justify-content: center' and
+    on the cross axis by using 'align-items: center'.
+
+How do you generate a random number in JavaScript?
+    Math.random() returns a random number between 0 and 1.
+
+What is an API?
+    An API is a computing interface by which data can be stored/retrieved in an effort
+    to make lives easier for developers by extracting away some of the more detailed work.
+
+How do you use Fetch in JavaScript?
+    fetch(url, options);
+    The url specifies the location of the data you want to fetch, while the options provides
+    functionality to adjust methods, headers, etc. of the request.

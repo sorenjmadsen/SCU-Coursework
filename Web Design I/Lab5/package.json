@@ -1,0 +1,14 @@
+{
+  "name": "gif-server",
+  "version": "0.0.1",
+  "description": "A server that stores GIFs on a file and serves them ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Someone",
+  "license": "Unlicense",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -16,7 +16,7 @@ Instructed by Dr. Behnam Dezfouli, COEN 79 is a course teaching object-oriented 
 Instructed by Dr. Salem Al-Agtash, COEN 146 is a course on the fundamentals of computer networking. The classes covers theoretical topics on packet transmission is done. The labs pertain to rudimentary network programming in C.
 
 ### Fundamentals of the Internet of Things
-Instructed by Dr. Benham Dezfouli as a special elective course, we covered current topics in IoT. Covering everything from models of IoT systems to the specifics of communication protocols, such as Bluetooth, 802.11, and LoRa, to access control, internet protocols (IPv4, IPv6, 6LoWPAN), and application protocols such as HTTP, MQTT, and CoAP. In doing so, we completed labs through the programming of Raspberry Pi's in Python and Cypress boards using WICED Studio and C programming.
+Instructed by Dr. Benham Dezfouli as a special elective course, we covered current topics in IoT. Covering everything from models of IoT systems to the specifics of communication protocols, such as Bluetooth, 802.11, and LoRa, to access control, internet protocols (IPv4, IPv6, 6LoWPAN), and application protocols such as HTTP, MQTT, and CoAP. In doing so, we completed labs through the programming of Raspberry Pi's in Python and RTOS-based Cypress boards using WICED Studio and C programming.
 
 ### Introduction to Computer Security
 Instructed by Dr. Yuhong Liu, COEN 150 is a course that overviews the fundamental concepts of computer security from physical aspects to common types of attacks.
@@ -27,3 +27,6 @@ algorithms used in modern day data protection.
 
 ### Web Design I
 Instructed by Prof. Arman Elahi, this course dives into the fundamentals of web programming in HTML, CSS, and Javascript.
+
+### Operating Systems
+Instructed by Dr. Ahmed Amer, this course outlines the major functions and duties of computer operating systems. Much of what was covered in this course dealt with memory management such as page swapping and synchronous programming. We examined the effects of page swapping and scheduling algorithms on the performance of the MINIX operating system running in a virtual environment.

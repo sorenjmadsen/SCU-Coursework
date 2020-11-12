@@ -1,0 +1,23 @@
+- ls -la and show me your files:
+  * 100000 (5 zeroes)
+  * 1000000 (6 zeroes)
+  * 10000000 (7 zeroes)
+  * 100000000 (8 zeroes)
+
+- run step1 on smallest and biggest file
+
+- run step2 on biggest file, buffsizes 100, 100000 (2 runs):
+  * Show me your code and how you get buffsize
+
+- run step3 on biggest file, buffsizes 100, 100000 (2 runs):
+  * Show me how you get buffsize
+  * Show me how you set the new name of the file
+  * ls -la and show me the file sizes of the original and the copy
+  * diff the new copied file with the original
+
+- run step4 on 1M, buffsizes 100 and 100000, with 2 and 64 threads:
+  * Show me how you get buffsize, numthreads
+  * Show me how you generate the names of the new files
+  * Show me where and how you create your threads
+  * diff some of the new copied files against the original
+ 

@@ -1,0 +1,9 @@
+// Soren Madsen
+// 4 April 2019
+// Lab 2 Part 1
+// This program performs matrix multiplication using multiple threads.
+
+#include <stdio.h>      /* printf, stderr */
+#include <pthread.h>     /* thread */
+#include <stdlib.h>     /* atoi */
+#include <errno.h>      /* errno */

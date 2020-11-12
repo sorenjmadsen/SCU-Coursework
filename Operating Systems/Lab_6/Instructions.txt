@@ -1,0 +1,61 @@
+Setting up the Minix image:
+	On HOST
+1) 	setup vmware
+	Prepares VMware for execution.	
+
+2) 	minix-get-image
+	Creates a new minix system image. This will overwrite all changes made if run after the first time.
+
+3)	vmware &
+	Runs the vmware software while printing debug messages in the console.
+
+	On VM
+4) On first boot, enter "root" as the name
+5) Set a system password for user root using "passwd"
+6) Set up the FTP daemon for communication between host and VM
+	tcpd ftp /usr/bin/in.ftpd
+	Initializes the daemon so the local system (host) can connect via FTP.
+	NOTE: This will need to be done after every reboot.
+
+Connecting to VM via FTP:
+	On VM
+1) 	Run "ifconfig" to find the IP address of the virtual machine
+
+	On HOST
+2)	ftp <IP address of VM>
+3) 	Enter "root" username
+4) 	Enter your created password from "passwd"
+5) 	Enjoy your connection!
+
+	NOTE: The connection will be lost after a VM reboot.
+
+Changing the Minix kernel:
+	Done by altering the message at bootup.
+  On VM
+1) 	cd /usr/src/kernel
+	 Change to the kernel directory to look for keywords about the kernel bootup.
+2) 	grep -i copyright *
+	 Looks for the keyword "copyright" to find the bootup message.
+
+	On HOST in FTP connection
+3)	lpwd
+	 Checks the current directory on the local machine for file transfer.
+	 If this is not the directory you wish to copy files to, run:
+		lcd <target directory>
+4) 	cd /usr/src/kernel
+	 Changes the currect directory on the VM.
+5) 	get <filename>
+	 Copies the target file for modication to the local directory on the host.
+6) 	Change the just copied file on the host computer to manipulate the kernel boot message.
+7)	put<filename>
+	 Copies the altered file to the location on the VM. Overwrites the old file if the name
+	 is still the same.
+8) 	cd /usr/src/
+	 Changes to the /usr/src directory for recompiling
+9) 	make world
+	 Recompiles the kernel, including the changes that were made.
+10)	reboot
+	 Reboots the VM and initializes the changes made in the recompiled kernel.
+11) Enjoy your personalized kernel!
+	
+	

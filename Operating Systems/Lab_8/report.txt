@@ -1,0 +1,24 @@
+Least Recently Used:
+	Maintains an array of page numbers that adjust for each page swap. In this program, the
+	array keeps the most recently used page in the front. On each swap, the least recently used
+	element (the last element in the array) is overwritten therefore removing it.
+
+	Page Faults: 9510/10000
+	Hit Rate:	 0.0490
+
+First In First Out:
+	Maintains a circular array of page number such that it continuously overwrites values in the
+	array on each circular pass through. If there is a hit, no action is taken other than adding
+	to the hit counter.
+	
+	Page Faults: 9515/10000
+	Hit Rate: 	 0.0485
+
+Second Chance Replacement
+	Uses a reference bit in a struct for the page number. In addition, it uses a circular array to
+	manage all the pages. On a page fault, the index begins at the head of the array and continues
+	until a page has a reference bit of 0. If there is a hit, it sets the reference bit to 1,
+	giving it a second chance at survival.
+
+	Page Faults: 9510/10000
+	Hit Rate:	 0.0490

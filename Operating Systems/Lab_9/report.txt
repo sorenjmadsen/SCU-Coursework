@@ -1,0 +1,668 @@
+[smadsen@linux10610 Lab_9]$ ./testing_script.sh 
+step 1 test
+ 
+step 1 test1.txt
+
+real	0m0.010s
+user	0m0.001s
+sys	0m0.002s
+ 
+step 1 test2.txt
+
+real	0m0.018s
+user	0m0.000s
+sys	0m0.003s
+ 
+step 1 test3.txt
+
+real	0m0.022s
+user	0m0.001s
+sys	0m0.006s
+ 
+step 1 test4.txt
+
+real	0m0.069s
+user	0m0.020s
+sys	0m0.035s
+ 
+step 1 test5.txt
+
+real	0m0.352s
+user	0m0.116s
+sys	0m0.221s
+ 
+step 2 test
+ 
+step 2 test1.txt 100
+
+real	0m0.007s
+user	0m0.000s
+sys	0m0.002s
+ 
+step 2 test1.txt 1000
+
+real	0m0.007s
+user	0m0.002s
+sys	0m0.000s
+ 
+step 2 test1.txt 10000
+
+real	0m0.006s
+user	0m0.001s
+sys	0m0.001s
+ 
+step 2 test1.txt 100000
+
+real	0m0.008s
+user	0m0.000s
+sys	0m0.002s
+ 
+step 2 test2.txt 100
+
+real	0m0.016s
+user	0m0.000s
+sys	0m0.002s
+ 
+step 2 test2.txt 1000
+
+real	0m0.011s
+user	0m0.001s
+sys	0m0.001s
+ 
+step 2 test2.txt 10000
+
+real	0m0.018s
+user	0m0.000s
+sys	0m0.002s
+ 
+step 2 test2.txt 100000
+
+real	0m0.010s
+user	0m0.000s
+sys	0m0.002s
+ 
+step 2 test3.txt 100
+
+real	0m0.019s
+user	0m0.009s
+sys	0m0.002s
+ 
+step 2 test3.txt 1000
+
+real	0m0.020s
+user	0m0.001s
+sys	0m0.006s
+ 
+step 2 test3.txt 10000
+
+real	0m0.014s
+user	0m0.003s
+sys	0m0.003s
+ 
+step 2 test3.txt 100000
+
+real	0m0.019s
+user	0m0.002s
+sys	0m0.004s
+ 
+step 2 test4.txt 100
+
+real	0m0.082s
+user	0m0.054s
+sys	0m0.021s
+ 
+step 2 test4.txt 1000
+
+real	0m0.047s
+user	0m0.020s
+sys	0m0.020s
+ 
+step 2 test4.txt 10000
+
+real	0m0.041s
+user	0m0.008s
+sys	0m0.025s
+ 
+step 2 test4.txt 100000
+
+real	0m0.047s
+user	0m0.012s
+sys	0m0.021s
+ 
+step 2 test5.txt 100
+
+real	0m0.509s
+user	0m0.306s
+sys	0m0.193s
+ 
+step 2 test5.txt 1000
+
+real	0m0.378s
+user	0m0.181s
+sys	0m0.188s
+ 
+step 2 test5.txt 10000
+
+real	0m0.279s
+user	0m0.085s
+sys	0m0.181s
+ 
+step 2 test5.txt 100000
+
+real	0m0.288s
+user	0m0.096s
+sys	0m0.179s
+ 
+step 3 test
+ 
+step 3 test1.txt 100
+
+real	0m0.035s
+user	0m0.000s
+sys	0m0.002s
+ 
+step 3 test1.txt 1000
+
+real	0m0.021s
+user	0m0.000s
+sys	0m0.002s
+ 
+step 3 test1.txt 10000
+
+real	0m0.021s
+user	0m0.001s
+sys	0m0.001s
+ 
+step 3 test1.txt 100000
+
+real	0m0.021s
+user	0m0.000s
+sys	0m0.002s
+ 
+step 3 test2.txt 100
+
+real	0m0.056s
+user	0m0.003s
+sys	0m0.002s
+ 
+step 3 test2.txt 1000
+
+real	0m0.070s
+user	0m0.002s
+sys	0m0.002s
+ 
+step 3 test2.txt 10000
+
+real	0m0.058s
+user	0m0.001s
+sys	0m0.004s
+ 
+step 3 test2.txt 100000
+
+real	0m0.078s
+user	0m0.000s
+sys	0m0.004s
+ 
+step 3 test3.txt 100
+
+real	0m0.397s
+user	0m0.015s
+sys	0m0.019s
+ 
+step 3 test3.txt 1000
+
+real	0m0.196s
+user	0m0.004s
+sys	0m0.021s
+ 
+step 3 test3.txt 10000
+
+real	0m0.224s
+user	0m0.005s
+sys	0m0.018s
+ 
+step 3 test3.txt 100000
+
+real	0m0.218s
+user	0m0.000s
+sys	0m0.019s
+ 
+step 3 test4.txt 100
+
+real	0m1.294s
+user	0m0.067s
+sys	0m0.118s
+ 
+step 3 test4.txt 1000
+
+real	0m1.238s
+user	0m0.014s
+sys	0m0.134s
+ 
+step 3 test4.txt 10000
+
+real	0m1.278s
+user	0m0.022s
+sys	0m0.147s
+ 
+step 3 test4.txt 100000
+
+real	0m1.249s
+user	0m0.006s
+sys	0m0.145s
+ 
+step 3 test5.txt 100
+
+real	0m11.980s
+user	0m0.562s
+sys	0m0.888s
+ 
+step 3 test5.txt 1000
+
+real	0m11.598s
+user	0m0.234s
+sys	0m0.969s
+ 
+step 3 test5.txt 10000
+
+real	0m12.176s
+user	0m0.160s
+sys	0m1.039s
+ 
+step 3 test5.txt 100000
+
+real	0m11.320s
+user	0m0.024s
+sys	0m0.852s
+ 
+step 4 test
+ 
+step 4 test1.txt 100 2
+
+real	0m0.040s
+user	0m0.001s
+sys	0m0.003s
+ 
+step 4 test1.txt 100 8
+
+real	0m0.066s
+user	0m0.000s
+sys	0m0.010s
+ 
+step 4 test1.txt 100 32
+
+real	0m0.216s
+user	0m0.008s
+sys	0m0.026s
+ 
+step 4 test1.txt 100 64
+
+real	0m0.296s
+user	0m0.015s
+sys	0m0.035s
+ 
+step 4 test1.txt 1000 2
+
+real	0m0.062s
+user	0m0.000s
+sys	0m0.005s
+ 
+step 4 test1.txt 1000 8
+
+real	0m0.061s
+user	0m0.002s
+sys	0m0.006s
+ 
+step 4 test1.txt 1000 32
+
+real	0m0.207s
+user	0m0.002s
+sys	0m0.026s
+ 
+step 4 test1.txt 1000 64
+
+real	0m0.294s
+user	0m0.010s
+sys	0m0.040s
+ 
+step 4 test1.txt 10000 2
+
+real	0m0.061s
+user	0m0.000s
+sys	0m0.005s
+ 
+step 4 test1.txt 10000 8
+
+real	0m0.067s
+user	0m0.000s
+sys	0m0.009s
+ 
+step 4 test1.txt 10000 32
+
+real	0m0.214s
+user	0m0.006s
+sys	0m0.027s
+ 
+step 4 test1.txt 10000 64
+
+real	0m0.323s
+user	0m0.005s
+sys	0m0.055s
+ 
+step 4 test1.txt 100000 2
+
+real	0m0.031s
+user	0m0.000s
+sys	0m0.004s
+ 
+step 4 test1.txt 100000 8
+
+real	0m0.070s
+user	0m0.000s
+sys	0m0.013s
+ 
+step 4 test1.txt 100000 32
+
+real	0m0.207s
+user	0m0.001s
+sys	0m0.029s
+ 
+step 4 test1.txt 100000 64
+
+real	0m0.312s
+user	0m0.001s
+sys	0m0.052s
+ 
+step 4 test2.txt 100 2
+
+real	0m0.127s
+user	0m0.004s
+sys	0m0.007s
+ 
+step 4 test2.txt 100 8
+
+real	0m0.148s
+user	0m0.015s
+sys	0m0.017s
+ 
+step 4 test2.txt 100 32
+
+real	0m0.498s
+user	0m0.036s
+sys	0m0.068s
+ 
+step 4 test2.txt 100 64
+
+real	0m0.846s
+user	0m0.064s
+sys	0m0.134s
+ 
+step 4 test2.txt 1000 2
+
+real	0m0.104s
+user	0m0.001s
+sys	0m0.009s
+ 
+step 4 test2.txt 1000 8
+
+real	0m0.153s
+user	0m0.005s
+sys	0m0.020s
+ 
+step 4 test2.txt 1000 32
+
+real	0m0.465s
+user	0m0.005s
+sys	0m0.064s
+ 
+step 4 test2.txt 1000 64
+
+real	0m0.852s
+user	0m0.033s
+sys	0m0.119s
+ 
+step 4 test2.txt 10000 2
+
+real	0m0.077s
+user	0m0.002s
+sys	0m0.007s
+ 
+step 4 test2.txt 10000 8
+
+real	0m0.176s
+user	0m0.005s
+sys	0m0.018s
+ 
+step 4 test2.txt 10000 32
+
+real	0m0.471s
+user	0m0.005s
+sys	0m0.061s
+ 
+step 4 test2.txt 10000 64
+
+real	0m0.826s
+user	0m0.015s
+sys	0m0.110s
+ 
+step 4 test2.txt 100000 2
+
+real	0m0.108s
+user	0m0.000s
+sys	0m0.008s
+ 
+step 4 test2.txt 100000 8
+
+real	0m0.150s
+user	0m0.000s
+sys	0m0.019s
+ 
+step 4 test2.txt 100000 32
+
+real	0m0.486s
+user	0m0.002s
+sys	0m0.064s
+ 
+step 4 test2.txt 100000 64
+
+real	0m0.818s
+user	0m0.006s
+sys	0m0.107s
+ 
+step 4 test3.txt 100 2
+
+real	0m0.352s
+user	0m0.020s
+sys	0m0.035s
+ 
+step 4 test3.txt 100 8
+
+real	0m1.033s
+user	0m0.130s
+sys	0m0.200s
+ 
+step 4 test3.txt 100 32
+
+real	0m3.407s
+user	0m0.492s
+sys	0m0.702s
+ 
+step 4 test3.txt 100 64
+
+real	0m6.688s
+user	0m0.940s
+sys	0m1.365s
+ 
+step 4 test3.txt 1000 2
+
+real	0m0.318s
+user	0m0.006s
+sys	0m0.032s
+ 
+step 4 test3.txt 1000 8
+
+real	0m0.894s
+user	0m0.050s
+sys	0m0.188s
+ 
+step 4 test3.txt 1000 32
+
+real	0m3.308s
+user	0m0.160s
+sys	0m0.694s
+ 
+step 4 test3.txt 1000 64
+
+real	0m6.812s
+user	0m0.311s
+sys	0m1.273s
+ 
+step 4 test3.txt 10000 2
+
+real	0m0.340s
+user	0m0.009s
+sys	0m0.043s
+ 
+step 4 test3.txt 10000 8
+
+real	0m0.866s
+user	0m0.034s
+sys	0m0.223s
+ 
+step 4 test3.txt 10000 32
+
+real	0m3.356s
+user	0m0.097s
+sys	0m0.716s
+ 
+step 4 test3.txt 10000 64
+
+real	0m6.528s
+user	0m0.240s
+sys	0m1.535s
+ 
+step 4 test3.txt 100000 2
+
+real	0m0.322s
+user	0m0.002s
+sys	0m0.031s
+ 
+step 4 test3.txt 100000 8
+
+real	0m0.870s
+user	0m0.002s
+sys	0m0.141s
+ 
+step 4 test3.txt 100000 32
+
+real	0m3.168s
+user	0m0.022s
+sys	0m0.533s
+ 
+step 4 test3.txt 100000 64
+
+real	0m6.363s
+user	0m0.036s
+sys	0m1.121s
+ 
+step 4 test4.txt 100 2
+
+real	0m2.467s
+user	0m0.220s
+sys	0m0.317s
+ 
+step 4 test4.txt 100 8
+
+real	0m8.216s
+user	0m0.782s
+sys	0m1.102s
+ 
+step 4 test4.txt 100 32
+
+real	0m30.356s
+user	0m3.569s
+sys	0m4.801s
+ 
+step 4 test4.txt 100 64
+./testing_script.sh: line 42:  5265 Segmentation fault      (core dumped) ./step4 $file $buff $tc
+
+real	0m58.268s
+user	0m6.764s
+sys	0m9.929s
+ 
+step 4 test4.txt 1000 2
+
+real	0m1.999s
+user	0m0.072s
+sys	0m0.246s
+ 
+step 4 test4.txt 1000 8
+
+real	0m7.765s
+user	0m0.305s
+sys	0m1.303s
+ 
+step 4 test4.txt 1000 32
+
+real	0m29.867s
+user	0m1.249s
+sys	0m5.347s
+ 
+step 4 test4.txt 1000 64
+
+real	0m59.143s
+user	0m2.374s
+sys	0m10.127s
+ 
+step 4 test4.txt 10000 2
+
+real	0m2.417s
+user	0m0.053s
+sys	0m0.350s
+ 
+step 4 test4.txt 10000 8
+
+real	0m7.953s
+user	0m0.196s
+sys	0m1.219s
+ 
+step 4 test4.txt 10000 32
+
+real	0m30.933s
+user	0m0.779s
+sys	0m5.105s
+ 
+step 4 test4.txt 10000 64
+
+real	0m59.938s
+user	0m1.468s
+sys	0m10.432s
+ 
+step 4 test4.txt 100000 2
+
+real	0m2.438s
+user	0m0.007s
+sys	0m0.279s
+ 
+step 4 test4.txt 100000 8
+
+real	0m7.975s
+user	0m0.039s
+sys	0m1.258s
+ 
+step 4 test4.txt 100000 32
+
+real	0m30.787s
+user	0m0.104s
+sys	0m3.805s
+ 
+step 4 test4.txt 100000 64
+./testing_script.sh: line 42:  7473 Segmentation fault      (core dumped) ./step4 $file $buff $tc
+
+real	0m58.772s
+user	0m0.246s
+sys	0m10.111s
+
+
+For the test5.txt, the last test of step 4 had a segfault based on hard drive size allocated by the VLAN for the lab computers.
+I am unsure how to go around this, but the tests clearly demonstrate proper function and I/O functionality.

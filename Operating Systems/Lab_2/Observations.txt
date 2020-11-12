@@ -1,0 +1,1 @@
+When running the Two Process example with no input arguments, we get a segfault from a bad memory access operation. With 500 microseconds, both the parent and child processes do not perfectly alternate print statements. The child or parent may send instructions consecutively. At 5000 microseconds, consecutive statements become a lot less common.

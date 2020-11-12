@@ -1,0 +1,33 @@
+1. How long does program take to read through each test file? 5 runs, 1 for each file, should result in 5 readings for this step. Use `time` command.
+
+2. Time the run time for 100, 1000, 10000, 100000 buff sizes. For 5 files (and 4 buff sizes), we have 20 readings
+
+3. Run the same tests again for your new copy program (20 more readings)
+
+4. Across 5 files, Run for threads 2, 8, 32, and 64, w/ read-write sizes 100, 1000, 10000, and 100000.
+
+   5 files, 4 thread counts, 4 read-write sizes -> 5x4x4 readings
+   
+   // 16 readings for file 1... 16x5 files = 90
+   time ./step4 file1.txt 100 2
+   time ./step4 file1.txt 100 8
+   time ./step4 file1.txt 100 32
+   time ./step4 file1.txt 100 64
+
+   time ./step4 file1.txt 1000 2
+   time ./step4 file1.txt 1000 8
+   time ./step4 file1.txt 1000 32
+   time ./step4 file1.txt 1000 64
+
+   time ./step4 file1.txt 10000 2
+   time ./step4 file1.txt 10000 8
+   time ./step4 file1.txt 10000 32
+   time ./step4 file1.txt 10000 64
+
+   time ./step4 file1.txt 100000 2
+   time ./step4 file1.txt 100000 8
+   time ./step4 file1.txt 100000 32
+   time ./step4 file1.txt 100000 64
+
+   // Then do the same for the other 4 files
+

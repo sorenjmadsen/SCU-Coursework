@@ -1,0 +1,13 @@
+{
+    "happy": [
+        "https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif",
+        "https://media.giphy.com/media/9Y6n9TR7U07ew/giphy.gif",
+        "https://media.giphy.com/media/YJ5OlVLZ2QNl6/giphy.gif"
+    ],
+    "sad": [
+        "https://media.giphy.com/media/1BXa2alBjrCXC/giphy.gif",
+        "https://media.giphy.com/media/ChX3hzy5CkXsI/giphy.gif",
+        "https://media.giphy.com/media/TydZAW0DVCbGE/giphy.gif",
+        "https://media.giphy.com/media/dJYoOVAWf2QkU/giphy.gif"
+    ]
+}

@@ -1,0 +1,8 @@
+In the example code, my username is not salagtash, the following program 
+code does not execute and the program exits. By changing the conditional 
+operator to check smadsen, I was able to find the area of a rectange.
+
+In the circle program, the shell is not equipped for floating point
+arithmetic, so we must use the 'bc' command which calls the basic
+calculator. In addition, we must scale the pi value for all the decimal
+places so that none truncate in the pass to the basic calculator.

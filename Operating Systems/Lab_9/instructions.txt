@@ -1,0 +1,103 @@
+- step1: 20%
+- step2: 20%
+- step3: 20%
+- step4: 20%
+- writeup: 20%
+
+================================================================================
+Introduction
+================================================================================
+
+
+Lab9:
+- This lab is on I/O, specifically disk reads/writes
+- Involves a ton of time measurements
+
+Step0: Create files of random data with 100k, 1M, 10M, 100M, and 10B bytes
+- (10 zeroes for 10B bytes)
+- You can do this using the command line w/ commands cat and head
+- /dev/random
+- Confirm correct file size with ls -la
+
+
+
+Step1: Create a program to read a file from start to end.
+
+- Accept filename (to read from) as parameter
+- Read into buffer size of 10000 bytes
+- ./step1 file.txt
+- ./step1 <filename>
+- WRITEUP: Time results for all 5 files -> 5 Results (use `time` command)
+
+
+Step2: Create another program starting with everything from step1 that has
+another argument which will be the buffer size.
+
+- ./step2 file.txt 100
+- ./step2 <filename> <buffersize>
+- WRITEUP: Time results for all 5 files, testing each against buffer sizes 100,
+1000, 10000, 100000. 5 files x 4 buffer sizes each -> 20 readings
+
+
+Step3: Create another program extending from Step2 where every read operation
+is matched by a subsequent write operation, where the data is written to some
+new file.
+
+- No new arguments here
+- Create the new file name by just adding an extension to the input filename
+- ./step3 file.txt 100 -> produces file.txt.copy
+- ./step3 <filename> <buffsize> -> produces <filename>.copy
+- Check your results using `diff` command
+  * Ex: diff file.txt file.txt.copy
+- WRITEUP: Time results for all 5 files, against 4 buffer sizes -> 20 readings
+  * Same as Step3
+
+
+Step4: Create another program extending from Step3 where multiple threads are
+created, each of which will read and copy a file (Like step3), but naming the
+file based on the thread that created it.
+
+- ./step4 <filename> <buffsize> <num_threads>
+  * produces <filename>.t1 <filename>.t2 ... <filename>.t<num_threads>, all
+    equivalent to <filename>
+
+- ./step4 file.txt 100 4
+  * produces file.txt.t1, file.txt.t2, file.txt.t3, file.txt.t4
+
+- Check results using `diff` command
+- WRITEUP: Time results for all 5 files against 4 buffer sizes, with 2, 8, 32,
+  and 64 threads each. So 5 files x 4 buffsizes x 4 thread counts = 90 readings
+
+- Explanation:
+
+   // 16 readings for file 1... 16x5 files = 90
+   time ./step4 file1.txt 100 2
+   time ./step4 file1.txt 100 8
+   time ./step4 file1.txt 100 32
+   time ./step4 file1.txt 100 64
+
+   time ./step4 file1.txt 1000 2
+   time ./step4 file1.txt 1000 8
+   time ./step4 file1.txt 1000 32
+   time ./step4 file1.txt 1000 64
+
+   time ./step4 file1.txt 10000 2
+   time ./step4 file1.txt 10000 8
+   time ./step4 file1.txt 10000 32
+   time ./step4 file1.txt 10000 64
+
+   time ./step4 file1.txt 100000 2
+   time ./step4 file1.txt 100000 8
+   time ./step4 file1.txt 100000 32
+   time ./step4 file1.txt 100000 64
+
+   // Then do the same for the other 4 files
+
+
+
+Tips:
+
+- use fopen(filename, "wb") for WRITING, fopen(filename, "wb") for READING
+- You can find random data in /dev/random
+- Don't type out every test... Write a script and copy/paste (or write
+  functions) to your advantage!

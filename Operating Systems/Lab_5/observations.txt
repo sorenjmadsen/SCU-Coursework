@@ -1,0 +1,1 @@
+When running the threadSync.c program, we see the threads enter the critical section and returning after exit. This one differs because it ensures that each thread enters one by one instead of all running concurrently and altering the values of the thread number in shared memory.

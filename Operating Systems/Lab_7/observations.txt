@@ -1,0 +1,49 @@
+1. Setup the VM as described in the previous lab.
+
+2. Use grep utility in the VM's /usr/src/kernel to find pick_proc().
+	- should be in proc.c
+
+3. Use FTP on the host to get proc.c
+
+4. Modify the C file such that the selected process is randomized if the selected q id is greater
+   than 3 so as not to avoid disrupting critical processes. This modification has a probability of 
+   randomly selecting another level of priority if the current q is not a system critical value (q < 4).
+   With this change, the time to complete processes should take longer, resulting in a longer boot time.
+   See code below:
+
+	/* MODIFICATION*/
+  	srand(0);
+  	
+
+  	for (q=0; q < NR_SCHED_QUEUES; q++) {	
+	/* MODIFICATION*/
+		if ((q > 3) && (rand() % 100 > 97)){
+			q = rand() % (NR_SCHED_QUEUES - 4) + 4;
+		}
+	/* END OF MOD */
+
+		if(!(rp = rdy_head[q])) {
+			TRACE(VF_PICKPROC, printf("queue %d empty\n", q););
+			continue;
+		}
+
+		#if DEBUG_RACE
+		rp = random_process(rdy_head[q]);
+		#endif
+
+		TRACE(VF_PICKPROC, printf("found %s / %d on queue %d\n", 
+			rp->p_name, rp->p_endpoint, q););
+		assert(proc_is_runnable(rp));
+		if (priv(rp)->s_flags & BILLABLE)	 	
+			bill_ptr = rp;		/* bill for system time */
+		return rp;
+  	}
+
+5. Use FTP to put the file back and recompile the OS.
+
+6. Measure the reboot time of the edited OS and compare to original.
+
+Observations:
+	When the scheduling algorithm was altered, the boot up took significantly longer. In fact,
+	it took so long that I reduced the probability significantly to ensure proper function of the
+	modification. In the end, it works, but the larger probability means longer boot time.

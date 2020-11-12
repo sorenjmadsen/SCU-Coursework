@@ -1,0 +1,6 @@
+1. Use require() to access outside libraries.
+2. I used a 400 if a POST or DELETE request was invalid in the 
+    body or parameters. I used a 404 if content was requested and
+    not found (such as a gif or a mood).
+3. I used the integrated push() function.
+4. The -d flag specifies data to include in the HTTP request.

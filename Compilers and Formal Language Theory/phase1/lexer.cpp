@@ -68,25 +68,6 @@ int main()
             cout << ((keywordSet.count(token) > 0) ? "keyword:" : "identifier:") << token << endl;
             continue;
         }
-        // Comments
-        else if (c == '/'){
-            if (cin.peek() == '*'){
-                token += c;
-                c = cin.get();
-                bool end = false;
-                while (!cin.eof() && !end){
-                    // Look for end of comment
-                    if (c == '*' && cin.peek() == '/'){
-                        token += c;
-                        token += cin.get();
-                        end = true;
-                    }
-                }
-                if (!end)
-                    cerr << "Comment started but not finished" << endl;
-            }
-            
-        }
         else {
             token += c;
             char nextChar = cin.get();
@@ -147,7 +128,25 @@ int main()
                     // Multiplication
                     break;
                 case '/':
-                    // Division
+                    // Comment
+                    if (nextChar == '*'){
+                        bool end = false;
+                        while (!cin.eof() && !end){
+                            // Look for end of comment
+                            if (c == '*' && cin.peek() == '/'){
+                                token += c;
+                                token += cin.get();
+                                end = true;
+                            }
+                            c = cin.get();
+                        }
+                        if (!end)
+                            cerr << "Comment started but not finished" << endl;
+                        continue;
+                    }
+                    else {
+                        // Division
+                    }
                     break;
                 case '%':
                     // Modulo
@@ -179,13 +178,18 @@ int main()
                 case ':':
                     // Colon
                     break;
+                case ',':
+                    // Comma
+                    break;
                 default:
                     cerr << "Invalid token" << endl;
                     c = nextChar;
                     continue;
             }
             cout << "operator:" << token << endl;
-            if (!(token.length() > 1))
+            if (token.length() > 1)
+                c = cin.get();
+            else 
                 c = nextChar;
         }
 	}

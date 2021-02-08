@@ -10,6 +10,8 @@
 # include <iostream>
 # include "tokens.h"
 # include "lexer.h"
+# include "Type.h"
+# include "checker.h"
 
 using namespace std;
 
@@ -78,12 +80,20 @@ static bool isSpecifier(int token)
  *		  void
  */
 
-static void specifier()
+int specifier()
 {
-    if (isSpecifier(lookahead))
-	match(lookahead);
-    else
-	error();
+	int typespec = lookahead;
+
+	if(lookahead == VOID)
+		match(VOID);
+
+	else if(lookahead == INT)
+		match(INT);
+
+	else
+		match(CHAR);
+	
+	return typespec;		
 }
 
 
@@ -97,10 +107,26 @@ static void specifier()
  *		  * pointers
  */
 
-static void pointers()
-{
-    while (lookahead == '*')
-	match('*');
+unsigned pointers()
+{	
+	unsigned indir = 0;
+    while (lookahead == '*'){
+		match('*');
+		indir++;
+	}
+	return indir;
+}
+
+string identifier(){
+	string id(lexbuf);
+	match(ID);
+	return id;
+}
+
+int numValue(){
+	int num = stoi(lexbuf);
+	match(NUM);
+	return num;
 }
 
 
@@ -115,16 +141,20 @@ static void pointers()
  *		  pointers identifier [ num ]
  */
 
-static void declarator()
+static void declarator(int typespec)
 {
-    pointers();
-    match(ID);
+    unsigned indir = pointers();
+    string name = identifier();
 
+	int length;
     if (lookahead == '[') {
-	match('[');
-	match(NUM);
-	match(']');
-    }
+		match('[');
+		length = numValue();
+		match(']');
+		declareVariable(name, Type(typespec, indir, length));
+    } else {
+		declareVariable(name, Type(typespec, indir));
+	}
 }
 
 
@@ -145,12 +175,12 @@ static void declarator()
 
 static void declaration()
 {
-    specifier();
-    declarator();
+    int typespec = specifier();
+    declarator(typespec);
 
     while (lookahead == ',') {
-	match(',');
-	declarator();
+		match(',');
+		declarator(typespec);
     }
 
     match(';');
@@ -195,33 +225,39 @@ static void declarations()
 static void primaryExpression()
 {
     if (lookahead == '(') {
-	match('(');
-	expression();
-	match(')');
-
-    } else if (lookahead == STRING) {
-	match(STRING);
-
-    } else if (lookahead == NUM) {
-	match(NUM);
-
-    } else if (lookahead == ID) {
-	match(ID);
-
-	if (lookahead == '(') {
-	    match('(');
-
-	    if (lookahead != ')') {
+		match('(');
 		expression();
+		match(')');
+    } 
+	else if (lookahead == STRING) 
+	{
+		match(STRING);
+    } 
+	else if (lookahead == NUM) 
+	{
+		match(NUM);
+    } 
+	else if (lookahead == ID) 
+	{
+		string name = identifier();
+		checkID(name);
+		if (lookahead == '(') 
+		{
+			match('(');
 
-		while (lookahead == ',') {
-		    match(',');
-		    expression();
+			if (lookahead != ')') 
+			{
+				expression();
+
+				while (lookahead == ',') 
+				{
+					match(',');
+					expression();
+				}
+			}
+
+			match(')');
 		}
-	    }
-
-	    match(')');
-	}
 
     } else
 	error();
@@ -553,16 +589,20 @@ static void assignment()
 
 static void statement()
 {
-    if (lookahead == '{') {
-	match('{');
-	declarations();
-	statements();
-	match('}');
-
-    } else if (lookahead == RETURN) {
-	match(RETURN);
-	expression();
-	match(';');
+    if (lookahead == '{') 
+	{
+		openScope();
+		match('{');
+		declarations();
+		statements();
+		match('}');
+		closeScope();
+    } 
+	else if (lookahead == RETURN) 
+	{
+		match(RETURN);
+		expression();
+		match(';');
 
     } else if (lookahead == WHILE) {
 	match(WHILE);
@@ -611,11 +651,14 @@ static void statement()
  *		  specifier pointers identifier
  */
 
-static void parameter()
+static void parameter(Parameters * params)
 {
-    specifier();
-    pointers();
-    match(ID);
+    int typespec = specifier();
+    unsigned indir = pointers();
+    string name = identifier();
+	Type _type = Type(typespec, indir);
+	declareVariable(name, _type);
+	params->push_back(_type);
 }
 
 
@@ -636,24 +679,22 @@ static void parameter()
  *		  , parameter remaining-parameters
  */
 
-static void parameters()
+static void parameters(Parameters * params)
 {
-    if (lookahead == VOID) {
-	match(VOID);
+	int typespec = specifier();
+	if (typespec == VOID && lookahead == ')')
+		return;
+	unsigned indir = pointers();
+	string name = identifier();
+	Type _type = Type(typespec, indir);
+	declareVariable(name, _type);
+	params->push_back(_type);
+	while (lookahead == ',') 
+	{
+		match(',');
+		parameter(params);
+	}
 
-	if (lookahead == ')')
-	    return;
-
-    } else
-	specifier();
-
-    pointers();
-    match(ID);
-
-    while (lookahead == ',') {
-	match(',');
-	parameter();
-    }
 }
 
 
@@ -670,20 +711,23 @@ static void parameters()
  *		  pointers identifier [ num ]
  */
 
-static void globalDeclarator()
+static void globalDeclarator(int typespec)
 {
-    pointers();
-    match(ID);
+    unsigned indir = pointers();
+    string name = identifier();
 
     if (lookahead == '(') {
-	match('(');
-	match(')');
-
+		match('(');
+		match(')');
+		declareFunction(name, Type(typespec, indir, nullptr));
     } else if (lookahead == '[') {
-	match('[');
-	match(NUM);
-	match(']');
-    }
+		match('[');
+		int length = numValue();
+		match(']');
+		declareVariable(name, Type(typespec, indir, length));
+    } else {
+		declareVariable(name, Type(typespec, indir));
+	}
 }
 
 
@@ -697,11 +741,11 @@ static void globalDeclarator()
  * 		  , global-declarator remaining-declarators
  */
 
-static void remainingDeclarators()
+static void remainingDeclarators(int typespec)
 {
     while (lookahead == ',') {
-	match(',');
-	globalDeclarator();
+		match(',');
+		globalDeclarator(typespec);
     }
 
     match(';');
@@ -722,34 +766,45 @@ static void remainingDeclarators()
 
 static void globalOrFunction()
 {
-    specifier();
-    pointers();
-    match(ID);
+    int typespec = specifier();
+    unsigned indir = pointers();
+    string name = identifier();
+	
 
-    if (lookahead == '[') {
-	match('[');
-	match(NUM);
-	match(']');
-	remainingDeclarators();
+    if (lookahead == '[') 
+	{
+		match('[');
+		int length = numValue();
+		match(']');
+		declareVariable(name, Type(typespec, indir, length));
+		remainingDeclarators(typespec);
+    } 
+	
+	else if (lookahead == '(') 
+	{
+		match('(');
 
-    } else if (lookahead == '(') {
-	match('(');
+		if (lookahead == ')') {
+	    	match(')');
+			declareFunction(name, Type(typespec, indir, nullptr));
+	    	remainingDeclarators(typespec);
+		} else {
+			Parameters * params = new Parameters;
+			defineFunction(name, Type(typespec, indir, params));
+			openScope();
+		    parameters(params);
+		    match(')');
+		    match('{');
+		    declarations();
+		    statements();
+		    match('}');
+			closeScope();
+		}
 
-	if (lookahead == ')') {
-	    match(')');
-	    remainingDeclarators();
-
-	} else {
-	    parameters();
-	    match(')');
-	    match('{');
-	    declarations();
-	    statements();
-	    match('}');
+    } else {
+		declareVariable(name, Type(typespec, indir));
+		remainingDeclarators(typespec);
 	}
-
-    } else
-	remainingDeclarators();
 }
 
 
@@ -763,8 +818,10 @@ int main()
 {
     lookahead = lexan(lexbuf);
 
+	openScope();
     while (lookahead != DONE)
 	globalOrFunction();
+	closeScope();
 
     exit(EXIT_SUCCESS);
 }

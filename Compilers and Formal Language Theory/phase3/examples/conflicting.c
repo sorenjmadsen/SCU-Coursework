@@ -9,10 +9,13 @@ void *x;			/* conflicting types for 'x' */
 int g();
 int *g();			/* conflicting types for 'g' */
 
+
 int *f();
 
 int *f(int z)
 {
+    void y;
+    y = 5;
 }
 
 int f;				/* conflicting types for 'f' */
